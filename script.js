@@ -224,7 +224,8 @@ const questions = {
             "Tunnel Vision: This marking on this rock is too fascinating.": [8, ["Venus"]],
             "Solo: Awesome, the thought of being alone excites you.": [8, ["Mars"]],
             "Help!: You're absolutely terrified. who knows what's around here?!": [8, ["Uranus"]],
-        }
+        },
+        "image": "images/question_7.jpg"
     },
     
     // question 8

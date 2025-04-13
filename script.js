@@ -69,6 +69,17 @@ function showQuestion(questionNumber) {
     const question = questions[questionNumber];
     questionElement.innerText = question.question_text;
 
+    // Update the question image if available
+    const questionImage = document.getElementById('question-image');
+    if (question.image) {
+    questionImage.src = question.image;
+    // Make sure the image is displayed if it was previously hidden
+    questionImage.style.display = "block";
+    } else {
+    // Hide image if none is provided for this question
+    questionImage.style.display = "none";
+    }
+
     Object.entries(question.question_choices).forEach(([choice, value]) => {
         const button = document.createElement('button');
         button.innerText = choice;
@@ -131,12 +142,6 @@ function showResults() {
     console.log("Final scores:", planets);
 }
 
-
-
-
-
-
-
 const questions = {
     // question 1
     "1": {
@@ -146,9 +151,10 @@ const questions = {
             "The Enchanted Orbit: a mellow expedition with a touch of mystery and unexpectedness, while enjoying the scenery": [2, ["Uranus"]],
             "The Timeless Voyage: an educational expedition, using the opportunity to learn something": [2, ["Venus"]],
             "The Radiant Journey: focusing on having a good time through spontaneous activities": [2, ["Jupiter"]]
-        }
-
+        },
+        "image": "images/question_1.jpg"
     },
+
 
     // question 2
     "2": {
@@ -158,7 +164,8 @@ const questions = {
             "Bold Explorer: You leap into the unknown, being eager and experienced to experience its raw energy and want to uncover its secrets.": [3, ["Mars"]],
             "Overthink Genie:  You deeply think about its energy and wonder what it potentially has to benefit you. ": [3, ["Uranus"]],
             "Hopeful Dreamer: You see the nebula as a symbol of infinite possibilities and want to embrace the encounter with optimism.": [3, ["Jupiter"]]
-        }
+        },
+        "image": "images/question_2.jpg"
     },
 
     // question 3
@@ -169,7 +176,8 @@ const questions = {
             "Spiriter: You've been waiting for something like this to happen, driven and excited by the thrill of what might be in there.": [4, ["Mars"]],
             "Future Prayer: You want to embrace the rift, thinking of it as a symbol of boundless opportunity and renewal. Confident that it will hold positive changes for your future.": [4, ["Uranus"]],
             "Thoughtful Learner: You're excited to use this opportunity as a lesson to learn what's inside.": [4, ["Venus"]],
-        }
+        },
+        "image": "images/question_3.jpg"
     },
     
     // question 4
@@ -180,7 +188,8 @@ const questions = {
             "Lovers Quarrel: You consider the fact that you might ruin your relationship with either one, so you leave it alone.": [5, ["Uranus"]],
             "High thinker: You believe that it won't escalate too far, so you leave them be.": [5, ["Jupiter"]],
             "Friendly Teacher: You break the fight and lecture them.": [5, ["Venus"]],
-        }
+        },
+        "image": "images/question_4.jpg"
     },
 
     // question 5
@@ -191,7 +200,8 @@ const questions = {
             "Crying Wolf: You run to the others, relying on them to know what to do.": [6, ["Uranus"]],
             "Curious George: You move the ship forward, you have to know what it is.": [6, ["Mars"]],
             "Teach me: You wake the others, out of hopes they can teach you what it is.": [6, ["Venus"]],
-        }
+        },
+        "image": "images/question_5.avif"
     },
 
     // question 6
@@ -202,7 +212,8 @@ const questions = {
             "Buddy System: Grab a partner! You can't explore without experiencing it with somebody. Makes it more enjoyable.": [7, ["Uranus"]],
             "Priorities: You have to explore every inch, what if there are aliens on planet?": [7, ["Jupiter"]],
             "Faster: You run off, the thought of everything being unknown thrills you to the bone.": [7, ["Mars"]],
-        }
+        },
+        "image": "images/question_6.jpg"
     },
 
     // question 7
@@ -244,7 +255,7 @@ const questions = {
         "question_choices": {
             "Memorable thoughts: That you didn't get to write down every thought you had.": [0, ["Venus"]],
             "Unseen: How you wish you could've used this chance to bond with everyone more.": [0, ["Uranus"]],
-            "New beginnings:No regrets, everything will come to happen anyways. ": [0, ["Jupiter"]],
+            "New beginnings: No regrets, everything will come to happen anyways. ": [0, ["Jupiter"]],
             "Thriller: To explore more. ": [0, ["Mars"]],
         }
     },

@@ -21,7 +21,6 @@ body, html {
     margin:0 auto;
   }
 
-
 #result-container{
     display: inline-block;
     background-color: #66c0f4;
@@ -46,4 +45,8 @@ body, html {
 #restart-button:hover {
     background-color: rgb(16, 26, 54);
     box-shadow: 0 0 10px rgb(16, 26, 54);
+}
+
+.hide {
+    display: none;
 }

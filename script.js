@@ -121,5 +121,16 @@ const questions = {
             "Random Chance: You were adventuring randomly and just happened to encounter them.": [10, ["Mars"]],
         }
     },
+
+    // question 10
+    "10": {
+        "question_text": "It's time to head back to the ship. What would be your regret?",
+        "question_choices": {
+            "Memorable thoughts: That you didn't get to write down every thought you had": [0, ["Venus"]],
+            "Unseen: How you wish you could've used this chance to bond with everyone more.": [0, ["Uranus"]],
+            "New beginnings:No regrets, everything will come to happen anyways. ": [0, ["Jupiter"]],
+            "Thriller: To explore more. ": [0, ["Mars"]],
+        }
+    },
 }
         

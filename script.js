@@ -1,50 +1,6 @@
-const startButton = document.getElementById('start-button')
-const questionContainerElement = document.getElementById('question-container')
-startButton.addEventListener('click', startGame)
-const questionElement = document.getElementById('question')
-const answerButtonElement = document.getElementById('answer-buttons')
+const startButton = document.getElementById('start-button');
+const restartButton = document.getElementById('restart-button');
 
-function startGame() {
-    console.log('Started')
-    setNextQuestion(currentQuestion);
-}
-
-// has our quiz start at question 1
-let currentQuestion = "1";
-
-function setNextQuestion() {
-    // need to get element from question container in html
-
-    // call function to reveal the planet (0 is our last question)
-    if (state === "0" || state === 0) {
-        planetResult();
-        return;
-    }
-}
-
-function selectAnswer() {
-
-}
-
-
-// determining which planet has the highest score
-function planetResult() {
-    let max_score = -1;
-    let planet_result = '';
-
-    // iterating to update the points of each planet. 
-    for (const [planet, score] of Object.entries(planets)){
-        if (score > max_score) {
-            max_score = score;
-            planet_result = planet;
-        }
-    }
-
-    // after the end of the iteration, we know the planet with the max points, displaying it here
-    const questionContainer = document.getElementById('question-container');
-    questionContainer.innerHTML = <p> Your personality planter is: ${planet_result} </p>;
-    console.log('Final Score: ', planets);
-}
 
 const planets = {
     "Mars"     : 0,    // Adventurous
@@ -52,6 +8,24 @@ const planets = {
     "Jupiter"  : 0,    // Optimistic
     "Uranus"   : 0,    // Romantic
 };
+
+startButton.addEventListener('click', startQuiz);
+if(restartButton){
+    restartButton.addEventListener('click', restartQuiz);
+}
+
+
+function startQuiz() {
+    
+}
+
+function restartQuiz() {
+
+}
+
+
+
+
 
 const questions = {
     // question 1

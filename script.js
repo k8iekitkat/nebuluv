@@ -1,8 +1,8 @@
 const startButton = document.getElementById('start-button')
 
-startButton.addEventListener('click', startQuiz)
+startButton.addEventListener('click', startGame)
 
-function startQuiz() {
+function startGame() {
     console.log('Started')
 }
 

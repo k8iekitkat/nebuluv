@@ -337,7 +337,7 @@ const planetPhotos = {
       { src: "images/jupiter_alien_three.webp", description: "Name: Lexor      Age: 20,332,764    Description: Often seen flurbling across the Milky Way and bamboozling graviton gabbers."}
     ],
     "Uranus": [
-      { src: "images/uranus_alien_one.webp", description: "Name: Vynora     Age: 88,294,211    Description: Loves to niffle through surreal starlight and bebop around with snizzle-spritzed comets."},
+      { src: "images/uranus_alien_one.png", description: "Name: Vynora     Age: 88,294,211    Description: Loves to niffle through surreal starlight and bebop around with snizzle-spritzed comets."},
       { src: "images/uranus_alien_two.webp", description: "Name: Rilanea    Age: 8,124,288     Description: Has a quirky habit of flabbergasting meteorites and zibbering along quirky cosmic avenues."},
       { src: "images/uranus_alien_three.webp", description: "Name: Xyrissa    Age: 199,818,228   Description: Expert at quorfing light-year laughs and splitering the mundane with a zany twist in zero-G."}
     ]

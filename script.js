@@ -179,10 +179,10 @@ function showNextPhoto() {
             showNextPhoto();
         }
         else{//no more planets or photos
-            descriptionElement.innerText = "";
             document.getElementById('photo-message').innerText = "picky ass, you don't deserve anyone";
             document.getElementById('photo-message').classList.remove('hide');
-            document.querySelector('photo-controls').classList.add('hide');
+            document.querySelector('.photo-controls').classList.add('hide');
+            document.getElementById('photo-description').classList.add('hide');
         }
         
 

@@ -14,7 +14,7 @@ A space-themed personality quiz web application built using HTMl, CSS, and JacaS
 - [Acknowledgements](#acknowledgements)
 ----------------------------------------
 ## Overview
-Nebuluv blends fun personality quizzes with space adventure. The user navigates through a series of questions, each designed to uncover different facets of their personality. Based on the responses, a specific planet from our celestial map is chosen as a match. Once the planet is revealed, users get to meet an extraterrestrial companion. Depending on the user’s decision to accept or decline, the game wraps up with a final result, adding a quirky, humorous touch to the interactive experience.
+- Nebuluv blends fun personality quizzes with space adventure. The user navigates through a series of questions, each designed to uncover different facets of their personality. Based on the responses, a specific planet from our celestial map is chosen as a match. Once the planet is revealed, users get to meet an extraterrestrial companion. Depending on the user’s decision to accept or decline, the game wraps up with a final result, adding a quirky, humorous touch to the interactive experience.
 --------------------------------------------------------------------------------------------------------------
 ## Features
 - **Interactive Personality Quiz:** A dynamic questionnaire that evaluates user responses.
@@ -23,12 +23,12 @@ Nebuluv blends fun personality quizzes with space adventure. The user navigates 
 - **User-Driven Flow:** Decisions from users influence the final outcome of the game.
 - **Responsive Design:** Crafted with HTML, CSS, and JavaScript for a smooth, interactive experience across devices.
 --------------------------------------
-### Prerequisites
+## Prerequisites
 Before running the application, ensure that you have the following installed:
 - A modern web browser (e.g., Chrome, Firefox, Safari)
 - A code editor (e.g., Visual Studio Code, Sublime Text) for local modifications
 ---------------------------------------------------------------------------------
-### Installation
+## Installation
 1. **Clone the repository:**
    ```bash
    git clone https://github.com/yourusername/nebuluv.git

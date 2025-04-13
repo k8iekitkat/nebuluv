@@ -32,10 +32,10 @@
 
 #question-container {
     color: white;
-    font-weight: bold;
-    width: 1000px;
-
+    width: 50%;
+    text-shadow: 0 0 15px white;
 }
+
 
 body, html {
     height: 100%;

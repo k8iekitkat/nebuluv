@@ -3,6 +3,8 @@ const restartButton = document.getElementById('restart-button');
 const questionContainerElement = document.getElementById('question-container');
 const answerButtonElement = document.getElementaryId('answer-buttons');
 const questionElement = document.getElementById('question');
+const resultContainerElement = document.getElementById('result-container');
+const resultTextElement = document.getElementById('result-text');
 
 let currentQuestionIndex = 1;
 
@@ -36,6 +38,10 @@ function startQuiz() {
 }
 
 function restartQuiz() {
+    resultContainerElement.classList.add('hide');
+    startButton.classList.remove('hide');
+    currentQuestionIndex = 1;
+    resetPlanetScores();
 
 }
 
@@ -70,6 +76,18 @@ function showQuestion(questionNumber) {
         answerButtonElement.appendChild(button);
     });
 
+}
+
+function selectAnswer(answerData) {
+    const nextQuestionIndex = answerData[0];
+    const planetPoints = answerData[1];
+
+    planetPoints.forEach(planet => {
+        planets[planet] += 1;
+    });
+
+    currentQuestionIndex = nextQuestionIndex;
+    setNextQuestion();
 }
 
 function showResults() {

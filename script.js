@@ -1,50 +1,12 @@
-const startButton = document.getElementById('start-button')
-const questionContainerElement = document.getElementById('question-container')
-startButton.addEventListener('click', startGame)
-const questionElement = document.getElementById('question')
-const answerButtonElement = document.getElementById('answer-buttons')
+const startButton = document.getElementById('start-button');
+const restartButton = document.getElementById('restart-button');
+const questionContainerElement = document.getElementById('question-container');
+const answerButtonElement = document.getElementaryId('answer-buttons');
+const questionElement = document.getElementById('question');
+const resultContainerElement = document.getElementById('result-container');
+const resultTextElement = document.getElementById('result-text');
 
-function startGame() {
-    console.log('Started')
-    setNextQuestion(currentQuestion);
-}
-
-// has our quiz start at question 1
-let currentQuestion = "1";
-
-function setNextQuestion() {
-    // need to get element from question container in html
-
-    // call function to reveal the planet (0 is our last question)
-    if (state === "0" || state === 0) {
-        planetResult();
-        return;
-    }
-}
-
-function selectAnswer() {
-
-}
-
-
-// determining which planet has the highest score
-function planetResult() {
-    let max_score = -1;
-    let planet_result = '';
-
-    // iterating to update the points of each planet. 
-    for (const [planet, score] of Object.entries(planets)){
-        if (score > max_score) {
-            max_score = score;
-            planet_result = planet;
-        }
-    }
-
-    // after the end of the iteration, we know the planet with the max points, displaying it here
-    const questionContainer = document.getElementById('question-container');
-    questionContainer.innerHTML = <p> Your personality planter is: ${planet_result} </p>;
-    console.log('Final Score: ', planets);
-}
+let currentQuestionIndex = 1;
 
 const planets = {
     "Mars"     : 0,    // Adventurous
@@ -52,6 +14,128 @@ const planets = {
     "Jupiter"  : 0,    // Optimistic
     "Uranus"   : 0,    // Romantic
 };
+
+const planetDescriptions = {
+    "Mars": "You're adventurous and bold! Like Mars, you have a fiery spirit and thrive on challenges. You're not afraid to take risks and explore uncharted territories. Your courage and determination make you a natural leader in any expedition.",
+    "Venus": "You're analytical and thoughtful! Like Venus, you have a scientific mind and love to learn. You approach life with curiosity and wisdom, always seeking to understand the deeper meaning behind things. Your intellectual nature makes you a valuable guide and teacher.",
+    "Jupiter": "You're optimistic and spontaneous! Like Jupiter, you radiate positive energy and see the bright side of every situation. You embrace life with enthusiasm and aren't afraid to take chances. Your joyful spirit lifts those around you and makes any journey more enjoyable.",
+    "Uranus": "You're romantic and mysterious! Like Uranus, you have a unique perspective and approach life with creativity. You value meaningful connections and see beauty in the unexpected. Your dreamy nature helps you find wonder in the cosmos of everyday life."
+};
+
+startButton.addEventListener('click', startQuiz);
+if(restartButton){
+    restartButton.addEventListener('click', restartQuiz);
+}
+
+
+function startQuiz() {
+    console.log('Started');
+    startButton.classList.add('hide');
+    questionContainerElement.classList.remove('hide');
+    currentQuestionIndex = 1;
+    resetPlanetScores();
+    setNextQuestion();
+
+}
+
+function restartQuiz() {
+    resultContainerElement.classList.add('hide');
+    startButton.classList.remove('hide');
+    currentQuestionIndex = 1;
+    resetPlanetScores();
+
+}
+
+function resetPlanetScores() {
+    for(let planet in planets){
+        planets[planet] = 0;
+    }
+}
+
+function setNextQuestion() {
+    if(questions[currentQuestionIndex]){
+        showQuestion(currentQuestionIndex);
+    }
+    else{
+        showResults();
+    }
+}
+
+function showQuestion(questionNumber) {
+    while(answerButtonElement.firstChild){
+        answerButtonElement.removeChild(answerButtonElement.firstChild);
+    }
+
+    const question = questions[questionNumber];
+    questionElement.innerText = question.question_text;
+
+    Object.entries(question.question_choices).forEach(([choice, value]) => {
+        const button = document.createElement('button');
+        button.innerText = choice;
+        button.classList.add('btn');
+        button.addEventListener('click', () => selectAnswer(value));
+        answerButtonElement.appendChild(button);
+    });
+
+}
+
+function selectAnswer(answerData) {
+    const nextQuestionIndex = answerData[0];
+    const planetPoints = answerData[1];
+
+    planetPoints.forEach(planet => {
+        planets[planet] += 1;
+    });
+
+    currentQuestionIndex = nextQuestionIndex;
+    setNextQuestion();
+}
+
+function showResults() {
+    questionContainerElement.classList.add('hide');
+    resultContainerElement.classList.remove('hide');
+    
+    // Find the planet with the highest score
+    let maxScore = 0;
+    let dominantPlanet = "";
+    
+    for (const planet in planets) {
+        if (planets[planet] > maxScore) {
+            maxScore = planets[planet];
+            dominantPlanet = planet;
+        }
+    }
+    
+    // Check for ties
+    const tiedPlanets = [];
+    for (const planet in planets) {
+        if (planets[planet] === maxScore && planet !== dominantPlanet) {
+            tiedPlanets.push(planet);
+        }
+    }
+    
+    // Display results
+    let resultText = "";
+    if (tiedPlanets.length > 0) {
+        // Handle tie
+        tiedPlanets.push(dominantPlanet);
+        resultText = `Your cosmic personality is a blend of ${tiedPlanets.join(' and ')}!\n\n`;
+        tiedPlanets.forEach(planet => {
+            resultText += `${planet}: ${planetDescriptions[planet]}\n\n`;
+        });
+    } else {
+        resultText = `Your cosmic personality aligns with ${dominantPlanet}!\n\n${planetDescriptions[dominantPlanet]}`;
+    }
+    
+    resultTextElement.innerText = resultText;
+    console.log("Final scores:", planets);
+}
+
+
+
+
+
+
 
 const questions = {
     // question 1

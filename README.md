@@ -56,7 +56,7 @@ Kaitlyn Jao – Front-end and game flow.
 
 Kent Nguyen – JavaScript logic and game flow.
 
-Kai Llora – Front-end desgin and CSS styling.
+Kai Llora – Front-end design and CSS styling.
 
 Alex Cui-Edio - CSS styling.
 

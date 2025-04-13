@@ -40,6 +40,12 @@ function startQuiz() {
 
 function restartQuiz() {
     resultContainerElement.classList.add('hide');
+    
+    //hide photo container elements
+    document.getElementById('photo-contatiner').classList.add('hide');
+    document.getElementById('photo-message').classList.add('hide');
+    document.getElementById('photo-controls').classList.remove('hide');
+    
     startButton.classList.remove('hide');
     currentQuestionIndex = 1;
     resetPlanetScores();
@@ -106,53 +112,45 @@ function showResults() {
     questionContainerElement.classList.add('hide');
     resultContainerElement.classList.remove('hide');
     
-    // Find the planet with the highest score
-    let maxScore = 0;
-    let dominantPlanet = "";
+    //Find ALL planets with max score 
+    let maxScore = Math.max(...Object.values(planets));
+    let dominantPlanets = [];  //stores array of planets
     
     for (const planet in planets) {
-        if (planets[planet] > maxScore) {
-            maxScore = planets[planet];
-            dominantPlanet = planet;
-        }
-    }
-    
-    // Check for ties
-    const tiedPlanets = [];
-    for (const planet in planets) {
-        if (planets[planet] === maxScore && planet !== dominantPlanet) {
-            tiedPlanets.push(planet);
+        if (planets[planet] === maxScore) {
+            dominantPlanets.push(planet); //Collect all max planets
         }
     }
     
     // Display results
     let resultText = "";
-    if (tiedPlanets.length > 0) {
-        // Handle tie
-        tiedPlanets.push(dominantPlanet);
-        resultText = `Your cosmic personality is a blend of ${tiedPlanets.join(' and ')}!\n\n`;
-        tiedPlanets.forEach(planet => {
+    if (dominantPlanets.length > 1) {
+        resultText = `Your cosmic personality is a blend of ${dominantPlanets.join(' and ')}!\n\n`;
+        dominantPlanets.forEach(planet => {
             resultText += `${planet}: ${planetDescriptions[planet]}\n\n`;
         });
     } else {
-        resultText = `Your cosmic personality aligns with ${dominantPlanet}!\n\n${planetDescriptions[dominantPlanet]}`;
+        resultText = `Your cosmic personality aligns with ${dominantPlanets[0]}!\n\n${planetDescriptions[dominantPlanets[0]]}`;
     }
 
-    window.dominantPlanet = dominantPlanet;
-    resultTextElement.innerText = resultText;
+    //Store array of planets
+    window.dominantPlanets = dominantPlanets;
+    window.currentPlanetIndex = 0;
 
+    resultTextElement.innerText = resultText;
     document.getElementById('start-photo-btn').addEventListener('click', startPhotoReveal);
-    console.log("Final scores:", planets);
 }
 
-// tracker for our current photo
+// tracker for our current photo and planet index
 let currentPhotoIndex = 0;
+let currentPlanetIndex = 0;
 
 function startPhotoReveal() {
     resultContainerElement.classList.add('hide');
     document.getElementById('photo-container').classList.remove('hide');
 
     currentPhotoIndex = 0;
+    currentPlanetIndex = 0;
     showNextPhoto();
     document.getElementById('yes-button').addEventListener('click', handleYes);
     document.getElementById('no-button').addEventListener('click', handleNo);
@@ -160,13 +158,13 @@ function startPhotoReveal() {
 
 // function to show the next photos
 function showNextPhoto() {
-    const dominantPlanet = window.dominantPlanet;
-    const photos = planetPhotos[dominantPlanet];
+    const currentPlanet = window.dominantPlanets[currentPlanetIndex];
+    const photos = planetPhotos[currentPlanet];
     const photoElement = document.getElementById('match-photo');
     const descriptionElement = document.getElementById('photo-description');
 
     // checking for if no more photos available
-    if (currentPhotoIndex < photos.length) {
+    if(currentPhotoIndex < photos.length) {
         photoElement.src = photos[currentPhotoIndex].src;
         photoElement.style.display = "block";
         // update description
@@ -174,10 +172,19 @@ function showNextPhoto() {
         descriptionElement.style.display = "block";
     }
 
-    else { // no more photos
-        descriptionElement.innerText = "";
-        document.getElementById('photo-message').innerText = "picky ass, you don't deserve anyone";
-        document.getElementById('photo-message').classList.remove('hide');
+    else{ // no more photos
+        currentPlanetIndex++;
+        if(currentPlanetIndex < window.dominantPlanets.length){
+            currentPhotoIndex = 0;
+            showNextPhoto();
+        }
+        else{//no more planets or photos
+            descriptionElement.innerText = "";
+            document.getElementById('photo-message').innerText = "picky ass, you don't deserve anyone";
+            document.getElementById('photo-message').classList.remove('hide');
+            document.querySelector('photo-controls').classList.add('hide');
+        }
+        
 
     }
 }

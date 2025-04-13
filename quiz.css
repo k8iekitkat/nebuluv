@@ -10,7 +10,7 @@
     min-height: 100%;
     overflow-x: hidden;
     overflow-y: auto;
-    font-family: monospace;
+    font-family: Arial, Helvetica, sans-serif;
   }
   
   .container {
@@ -100,16 +100,10 @@
     box-shadow: 0 0 20px #66c0f4;
     display: flex;
     text-shadow: 0 0 10px white;
-<<<<<<< HEAD
     font-size: 1.2rem;
 }
 
 #match-photo {
-=======
-  }
-  
-  #match-photo {
->>>>>>> 6e96566c30c79e5fe85da3654f5f536d449644c2
     width: 20%;
     margin: auto;
     margin-bottom: 20px;
@@ -129,7 +123,6 @@
     transition: background-color 0.3s ease;
     width: 500px;
     margin: auto;
-<<<<<<< HEAD
 }
 
 #yes-button {
@@ -154,8 +147,6 @@ body, html {
     background-image: url(images/background.jpg);
     background-position: center;
     margin:0 auto;
-=======
->>>>>>> 6e96566c30c79e5fe85da3654f5f536d449644c2
   }
 
 .logo {

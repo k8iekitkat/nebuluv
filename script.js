@@ -139,10 +139,9 @@ function showResults() {
     }
 
     window.dominantPlanet = dominantPlanet;
-    const startButton = document.getElementById('start-photo-btn');
-    startPhotoReveal,addEventListener('click', startPhotoReveal);
-    
     resultTextElement.innerText = resultText;
+
+    document.getElementById('start-photo-btn').addEventListener('click', startPhotoReveal);
     console.log("Final scores:", planets);
 }
 
@@ -179,9 +178,12 @@ function showNextPhoto() {
 }
 // if yes, match made
 function handleYes() {
-    document.getElementById('photo-container').classList.add('hide');
-    document.getElementById('photo-message').innerText = "Congrats! You have officially found your alien soulmate!";
-    document.getElementById('photo-message').classList.remove('hide');
+    document.querySelector('.photo-controls').classList.add('hide');
+
+    // Set and show the congratulatory message.
+    const photoMessage = document.getElementById('photo-message');
+    photoMessage.innerText = "Congrats! You have officially found your alien soulmate!";
+    photoMessage.classList.remove('hide');
 }
 // no means to go to the next one
 function handleNo() {

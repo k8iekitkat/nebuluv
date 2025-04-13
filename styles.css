@@ -19,6 +19,7 @@ body, html {
   text-align: center;
   padding: 20px;
   background-image: url(/images/background.jpg);
+  background-position: center;
   margin:0 auto;
 }
 
@@ -61,7 +62,7 @@ body, html {
 
 .start-button:hover {
   background-color: #66c0f4;
-  box-shadow: 0 0 20px #66c0f4;
+  box-shadow: 0 0 10px #66c0f4;
 }
 
 /* Responsive for smaller screens */

@@ -236,7 +236,8 @@ const questions = {
             "Lets do it: The thought of the unknown intruiges you. You take a sip.": [9, ["Mars"]],
             "Partnership!: Thirstiness is not important, finding someone is. ": [9, ["Uranus"]],
             "Why not: It looks close enough, lets try it.": [9, ["Jupiter"]],
-        }
+        },
+        "image": "images/question_8.jpg"
     },
 
     // question 9
@@ -247,7 +248,8 @@ const questions = {
             "Isolation: You sat in place until someone found you.": [10, ["Uranus"]],
             "Oh well: Random chance. You knew you'd find them eventually.": [10, ["Jupiter"]],
             "Random Chance: You were adventuring randomly and just happened to encounter them.": [10, ["Mars"]],
-        }
+        },
+        "image": "images/question_9.webp"
     },
 
     // question 10
@@ -258,7 +260,8 @@ const questions = {
             "Unseen: How you wish you could've used this chance to bond with everyone more.": [0, ["Uranus"]],
             "New beginnings: No regrets, everything will come to happen anyways. ": [0, ["Jupiter"]],
             "Thriller: To explore more. ": [0, ["Mars"]],
-        }
+        },
+        "image": "images/question_10.jpg"
     },
 }
 

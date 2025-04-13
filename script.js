@@ -1,6 +1,8 @@
 const startButton = document.getElementById('start-button');
 const restartButton = document.getElementById('restart-button');
 const questionContainerElement = document.getElementById('question-container');
+const answerButtonElement = document.getElementaryId('answer-buttons');
+const questionElement = document.getElementById('question');
 
 let currentQuestionIndex = 1;
 
@@ -9,6 +11,13 @@ const planets = {
     "Venus"    : 0,    // Analytical
     "Jupiter"  : 0,    // Optimistic
     "Uranus"   : 0,    // Romantic
+};
+
+const planetDescriptions = {
+    "Mars": "You're adventurous and bold! Like Mars, you have a fiery spirit and thrive on challenges. You're not afraid to take risks and explore uncharted territories. Your courage and determination make you a natural leader in any expedition.",
+    "Venus": "You're analytical and thoughtful! Like Venus, you have a scientific mind and love to learn. You approach life with curiosity and wisdom, always seeking to understand the deeper meaning behind things. Your intellectual nature makes you a valuable guide and teacher.",
+    "Jupiter": "You're optimistic and spontaneous! Like Jupiter, you radiate positive energy and see the bright side of every situation. You embrace life with enthusiasm and aren't afraid to take chances. Your joyful spirit lifts those around you and makes any journey more enjoyable.",
+    "Uranus": "You're romantic and mysterious! Like Uranus, you have a unique perspective and approach life with creativity. You value meaningful connections and see beauty in the unexpected. Your dreamy nature helps you find wonder in the cosmos of everyday life."
 };
 
 startButton.addEventListener('click', startQuiz);
@@ -31,12 +40,42 @@ function restartQuiz() {
 }
 
 function resetPlanetScores() {
-
+    for(let planet in planets){
+        planets[planet] = 0;
+    }
 }
 
 function setNextQuestion() {
-    
+    if(questions[currentQuestionIndex]){
+        showQuestion(currentQuestionIndex);
+    }
+    else{
+        showResults();
+    }
 }
+
+function showQuestion(questionNumber) {
+    while(answerButtonElement.firstChild){
+        answerButtonElement.removeChild(answerButtonElement.firstChild);
+    }
+
+    const question = questions[questionNumber];
+    questionElement.innerText = question.question_text;
+
+    Object.entries(question.question_choices).forEach(([choice, value]) => {
+        const button = document.createElement('button');
+        button.innerText = choice;
+        button.classList.add('btn');
+        button.addEventListener('click', () => selectAnswer(value));
+        answerButtonElement.appendChild(button);
+    });
+
+}
+
+function showResults() {
+
+}
+
 
 
 

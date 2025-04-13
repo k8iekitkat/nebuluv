@@ -71,6 +71,20 @@
     margin: 0 auto;
     margin-top: 20px;
     border: solid #1a3a8f;
+    box-shadow: 0 0 20px#66c0f4;
+}
+
+#question {
+    background: #1a3a8f;
+    border: 3px solid #3e64ff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 0 0 10px #3e64ff;;
+}
+
+#photo-container {
     box-shadow: 0 0 20px #1a3a8f;
   }
   
@@ -86,7 +100,7 @@
     padding: 12px 12px;
     border-radius: 10px;
     background-color: #1a3a8f;
-    box-shadow: 0 0 20px #1a3a8f;
+    box-shadow: 0 0 20px #66c0f4;
     display: flex;
     text-shadow: 0 0 10px white;
   }
@@ -96,15 +110,16 @@
     margin: auto;
     margin-bottom: 20px;
     border: solid #1a3a8f;
+    box-shadow: 0 0 20px#66c0f4;
     box-shadow: 0 0 20px #1a3a8f;
     border-radius: 30px;
   }
   
   #photo-message {
     background: #1a3a8f;
-    border: 2px solid #3e64ff;
+    border: 2px solid #66c0f4;
     border-radius: 10px;
-    box-shadow: 0 0 10px #1a3a8f;
+    box-shadow: 0 0 10px #66c0f4;
     padding: 15px 20px;
     color: white;
     font-size: 1rem;
@@ -112,31 +127,59 @@
     width: 500px;
     margin: auto;
   }
-  
-  #yes-button {
+
+#yes-button {
     margin-right: 100px;
   }
   
   #no-button {
     margin-left: 100px;
-  }
-  
-  #result-container {
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container {
     display: flex;
     flex-direction: column;
-    background-color: #66c0f4;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+    background-image: url(images/background.jpg);
+    background-position: center;
+    margin:0 auto;
+  }
+
+.logo {
+    background-image: url(images/app_icon.png);
+    position: absolute;
+    scale: 6.5%;
+    top: -475px;
+    left: -475px;
+    z-index: 1;
+
+}
+
+#result-container{
+    display: flex;
+    flex-direction: column;
+    background-color: #1a3a8f;
     font-weight: bold;
-    color: rgb(16, 26, 54);
+    color: white;
     padding: 12px 24px;
     font-size: 1.2rem;
     border-radius: 30px;
     transition: background-color 0.3s ease;
     box-shadow: 0 0 20px #66c0f4;
-  }
+      width: 75rem;
+}
   
   #restart-button {
     display: inline-block;
-    background-color: rgb(16, 26, 54);
+    background-color: #1a3a8f;
     font-weight: bold;
     color: white;
     padding: 12px 20px;
@@ -146,8 +189,8 @@
   }
   
   #restart-button:hover {
-    background-color: rgb(16, 26, 54);
-    box-shadow: 0 0 10px rgb(16, 26, 54);
+    background-color: #1a3a8f;
+    box-shadow: 0 0 10px #66c0f4;
   }
   
   #start-photo-btn {

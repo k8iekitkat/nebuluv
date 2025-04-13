@@ -137,9 +137,56 @@ function showResults() {
     } else {
         resultText = `Your cosmic personality aligns with ${dominantPlanet}!\n\n${planetDescriptions[dominantPlanet]}`;
     }
+
+    window.dominantPlanet = dominantPlanet;
+    const startButton = document.getElementById('start-photo-btn');
+    startPhotoReveal,addEventListener('click', startPhotoReveal);
     
     resultTextElement.innerText = resultText;
     console.log("Final scores:", planets);
+}
+
+// tracker for our current photo
+let currentPhotoIndex = 0;
+
+function startPhotoReveal() {
+    resultContainerElement.classList.add('hide');
+    document.getElementById('photo-container').classList.remove('hide');
+
+    currentPhotoIndex = 0;
+    showNextPhoto();
+    document.getElementById('yes-button').addEventListener('click', handleYes);
+    document.getElementById('no-button').addEventListener('click', handleNo);
+}
+
+// function to show the next photos
+function showNextPhoto() {
+    const dominantPlanet = window.dominantPlanet;
+    const photos = planetPhotos[dominantPlanet];
+    const photoElement = document.getElementById('match-photo');
+
+    // checking for if no more photos available
+    if (currentPhotoIndex < photos.length) {
+        photoElement.src = photos[currentPhotoIndex];
+        photoElement.style.display = "block";
+    }
+
+    else { // no more photos
+        document.getElementById('photo-message').innerText = "picky ass, you don't deserve anyone";
+        document.getElementById('photo-message').classList.remove('hide');
+
+    }
+}
+// if yes, match made
+function handleYes() {
+    document.getElementById('photo-container').classList.add('hide');
+    document.getElementById('photo-message').innerText = "Congrats! You have officially found your alien soulmate!";
+    document.getElementById('photo-message').classList.remove('hide');
+}
+// no means to go to the next one
+function handleNo() {
+   currentPhotoIndex++;
+   showNextPhoto();
 }
 
 const questions = {
@@ -265,5 +312,31 @@ const questions = {
     },
 }
 
+// photos for each planet
+const planetPhotos = {
+    "Mars" : [
+        "images/venus_alien_one.webp",
+        "images/venus_alien_two.webp",
+        "images/venus_alien_three.webp"
+
+    ],
+
+    "Venus" : [
+        "images/venus_alien_one.webp",
+        "images/venus_alien_two.webp",
+        "images/venus_alien_three.webp"
+    ],
+    "Jupiter" : [
+        "images/venus_alien_one.webp",
+        "images/venus_alien_two.webp",
+        "images/venus_alien_three.webp"
+
+    ],
+    "Uranus" : [
+        "images/venus_alien_one.webp",
+        "images/venus_alien_two.webp",
+        "images/venus_alien_three.webp"
+    ]
+};
 
         

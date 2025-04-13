@@ -317,9 +317,9 @@ const questions = {
 // photos for each planet
 const planetPhotos = {
     "Mars" : [
-        "images/venus_alien_one.webp",
-        "images/venus_alien_two.webp",
-        "images/venus_alien_three.webp"
+        "images/mars_alien_one.webp",
+        "images/mars_alien_two.webp",
+        "images/mars_alien_three.webp"
 
     ],
 
@@ -329,15 +329,15 @@ const planetPhotos = {
         "images/venus_alien_three.webp"
     ],
     "Jupiter" : [
-        "images/venus_alien_one.webp",
-        "images/venus_alien_two.webp",
-        "images/venus_alien_three.webp"
+        "images/jupiter_alien_one.webp",
+        "images/jupiter_alien_two.webp",
+        "images/jupiter_alien_three.webp"
 
     ],
     "Uranus" : [
-        "images/venus_alien_one.webp",
-        "images/venus_alien_two.webp",
-        "images/venus_alien_three.webp"
+        "images/uranus_alien_one",
+        "images/uranus_alien_two.webp",
+        "images/uranus_alien_three.webp"
     ]
 };
 

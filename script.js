@@ -6,20 +6,44 @@ const answerButtonElement = document.getElementById('answer-buttons')
 
 function startGame() {
     console.log('Started')
-    startButton.classList.add('hide')
-    questionContainerElement.classList.remove('hide')
-    setNextQuestion()
+    setNextQuestion(currentQuestion);
 }
-function showQuestion() {
 
-}
+// has our quiz start at question 1
+let currentQuestion = "1";
 
 function setNextQuestion() {
+    // need to get element from question container in html
 
+    // call function to reveal the planet (0 is our last question)
+    if (state === "0" || state === 0) {
+        planetResult();
+        return;
+    }
 }
 
 function selectAnswer() {
 
+}
+
+
+// determining which planet has the highest score
+function planetResult() {
+    let max_score = -1;
+    let planet_result = '';
+
+    // iterating to update the points of each planet. 
+    for (const [planet, score] of Object.entries(planets)){
+        if (score > max_score) {
+            max_score = score;
+            planet_result = planet;
+        }
+    }
+
+    // after the end of the iteration, we know the planet with the max points, displaying it here
+    const questionContainer = document.getElementById('question-container');
+    questionContainer.innerHTML = <p> Your personality planter is: ${planet_result} </p>;
+    console.log('Final Score: ', planets);
 }
 
 const planets = {
@@ -76,7 +100,7 @@ const questions = {
     },
 
     // question 5
-      "5": {
+    "5": {
         "question_text": "While everyone is sleeping, you notice something unfamiliar coming your way. What do you do?",
         "question_choices": {
             "Don't Care: You ignore it, worst case scenario it makes a small dent.": [6, ["Jupiter"]],
@@ -86,16 +110,61 @@ const questions = {
         }
     },
 
-      // question 6
-      "6": {
+    // question 6
+    "6": {
         "question_text": "You and your team finally land on an unknown planet. What is the first thing you do?",
         "question_choices": {
             "Observing Nerd: You immediately look and observe, analyzing the dust, temperature, etc.": [7, ["Venus"]],
             "Buddy System: You can't explore without experiencing it with somebody. Makes it more enjoyable.": [7, ["Uranus"]],
-            "Priorities: You have to explore every inch, what if there are aliens on planet?": [6, ["Jupiter"]],
-            "Faster: You run off, the thought of everything being unknown thrills you to the bone.": [6, ["Mars"]],
+            "Priorities: You have to explore every inch, what if there are aliens on planet?": [7, ["Jupiter"]],
+            "Faster: You run off, the thought of everything being unknown thrills you to the bone.": [7, ["Mars"]],
         }
     },
 
+    // question 7
+    "7": {
+        "question_text": "During your adventure on this new planet, you get lost. How do you feel?",
+        "question_choices": {
+            "Who Cares: You'll find them eventually.": [8, ["Jupiter"]],
+            "Tunnel Vision: This marking on this rock is too fascinating.": [8, ["Venus"]],
+            "Solo: Awesome, the thought of being alone excites you.": [8, ["Mars"]],
+            "Help!: You're absolutely terrified. who knows what's around here?!": [8, ["Uranus"]],
+        }
+    },
+    
+    // question 8
+    "8": {
+        "question_text": "After about an hour, you're still alone and have encountered a liquid that appears to look like water. What do you do?",
+        "question_choices": {
+            "Patience is Key: You would rather wait until you have fully deduced if it's ok to drink it or not.": [9, ["Venus"]],
+            "Lets do it: The thought of the unknown intruiges you. You take a sip.": [9, ["Mars"]],
+            "Partnership!: Thirstiness is not important, finding someone is. ": [9, ["Uranus"]],
+            "Why not: It looks close enough, lets try it.": [9, ["Jupiter"]],
+        }
+    },
 
-};
+    // question 9
+    "9": {
+        "question_text": "Some time goes by and you finally found your peers. How did you find them?",
+        "question_choices": {
+            "Mapper: You found them through your own deduction skills.": [10, ["Venus"]],
+            "Isolation: You sat in place until someone found you.": [10, ["Uranus"]],
+            "Oh well: Random chance. You knew you'd find them eventually.": [10, ["Jupiter"]],
+            "Random Chance: You were adventuring randomly and just happened to encounter them.": [10, ["Mars"]],
+        }
+    },
+
+    // question 10
+    "10": {
+        "question_text": "It's time to head back to the ship. What would be your regret?",
+        "question_choices": {
+            "Memorable thoughts: That you didn't get to write down every thought you had": [0, ["Venus"]],
+            "Unseen: How you wish you could've used this chance to bond with everyone more.": [0, ["Uranus"]],
+            "New beginnings:No regrets, everything will come to happen anyways. ": [0, ["Jupiter"]],
+            "Thriller: To explore more. ": [0, ["Mars"]],
+        }
+    },
+}
+
+
+        

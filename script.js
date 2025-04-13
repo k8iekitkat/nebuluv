@@ -335,7 +335,7 @@ const planetPhotos = {
 
     ],
     "Uranus" : [
-        "images/uranus_alien_one",
+        "images/uranus_alien_one.webp",
         "images/uranus_alien_two.webp",
         "images/uranus_alien_three.webp"
     ]

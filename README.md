@@ -51,6 +51,7 @@ Simple open the index.html file in your web browser. Alternatively, use a local 
 ----------------------
 ## Team and Contributions
 Nebuluv was developed collaboratively by a team of passionate developers dedicated to creative web experiences:
+
 Kaitlyn Jao – Front-end and game flow.
 
 Kent Nguyen – JavaScript logic and game flow.

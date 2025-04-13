@@ -4,7 +4,11 @@ startButton.addEventListener('click', startQuiz)
 
 function startQuiz() {
     console.log('Started')
+    setNextQuestion(currentQuestion);
 }
+
+// has our quiz start at question 1
+let currentQuestion = "1";
 
 function setNextQuestion() {
     // need to get element from question container in html
@@ -20,8 +24,6 @@ function selectAnswer() {
 
 }
 
-// has our quiz start at question 1
-let currentQuestion = "1";
 
 // determining which planet has the highest score
 function planetResult() {

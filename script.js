@@ -329,15 +329,15 @@ const planetPhotos = {
         { stc: "images/venus_alien_three.webp", description: "Name: Aqualis     Age: 289,209,100    Description: Famous for glibbing through interstellar bubble clouds and whirligigging funky plasma spritz."}
     ],
     "Jupiter" : [
-        "images/jupiter_alien_one.webp",
-        "images/jupiter_alien_two.webp",
-        "images/jupiter_alien_three.webp"
+        { src: "images/jupiter_alien_one.webp", description: "Name: Voltrax     Age: 908,388,299    Description: Reowned for shnazzling through space caverns and crinkling wildly with cosmic confetti."},
+        { src: "images/jupiter_alien_two.webp", description: "Name: Draxen      Age: 46,290,344     Description: Thrives on splinking rogue meteors and glomping unknown particles with a joyful zing."},
+        { src: "images/jupiter_alien_three.webp", description: "Name: Lexor     Age: 20,332,764     Description: Often seen flurbling across the Milky Way and bamboozling graviton gabbers."}
 
     ],
     "Uranus" : [
-        "images/uranus_alien_one.webp",
-        "images/uranus_alien_two.webp",
-        "images/uranus_alien_three.webp"
+        { src: "images/uranus_alien_one.webp", description: "Name: Vynora      Age: 88,294,211      Description:Loves to niffle through surreal starlight and bebop around with snizzle-spritzed comets."},
+        { src: "images/uranus_alien_two.webp", description: "Name: Rilanea     Age: 8,124,288       Description: Has a quirky habit of flabbergasting metorites and zibbering along quirky cosmic avenues."},
+        { src: "images/uranus_alien_three.webp", description: "Name: Xyrissa    Age: 199,818,228    Description: Expert at quorfing light-year laughs and splitering the mundane with a zany twist in zero-G."}   
     ]
 };
 

@@ -7,7 +7,6 @@
 body, html {
   height: 100%;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: beige;
 }
 
 .container {
@@ -23,15 +22,37 @@ body, html {
   margin:0 auto;
 }
 
+.homescreen {
+  background-color:#1a3a8f;
+}
+
+.logo {
+  background-image: url(/images/app_icon.png);
+  position: absolute;
+  scale: 8%;
+  top: -460px;
+  left: -460px;
+  z-index: 1;
+}
+
+
 .title {
+  background: #1a3a8f;
+  border: 2px solid #3e64ff;
+  padding: 10px 20px;
+  border-radius: 15px;
   font-size: 2.5rem;
   color: #66c0f4;
   font-weight: bold;
-  margin-bottom: 70px;
-  text-shadow: 0 0 10px #66c0f4;
+  margin-bottom: 30px;
+  text-shadow: 0 0 10px #3e64ff;;
 }
 
 .description-container {
+  background: #1a3a8f;
+  border: 2px solid #3e64ff;
+  padding: 10px 20px;
+  border-radius: 15px;
   color: #66c0f4;
   font-size: 1.6rem;
   margin-bottom: 50px;
@@ -49,7 +70,7 @@ body, html {
 
 .start-button {
   display: inline-block;
-  background-color: #66c0f4;
+  background-color: #1a3a8f;
   font-weight: bold;
   color: white;
   padding: 12px 24px;
@@ -62,8 +83,8 @@ body, html {
 }
 
 .start-button:hover {
-  background-color: #66c0f4;
-  box-shadow: 0 0 10px #66c0f4;
+  background-color: #3e64ff;
+  box-shadow: 0 0 10px #3e64ff;
 }
 
 /* Responsive for smaller screens */

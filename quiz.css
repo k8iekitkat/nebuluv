@@ -159,7 +159,7 @@ body, html {
 
 }
 
-#result-container{
+#result-container {
     display: flex;
     flex-direction: column;
     background-color: #1a3a8f;
@@ -170,7 +170,10 @@ body, html {
     border-radius: 30px;
     transition: background-color 0.3s ease;
     box-shadow: 0 0 20px #66c0f4;
-    width: 75rem;
+
+    width: 90%;
+    max-width: 75rem;
+    margin: 0 auto;
 }
 
 #restart-button {

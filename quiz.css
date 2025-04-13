@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: a;
+    font-family: monospace;
   }
 
 .btn{
@@ -75,6 +76,7 @@
     box-shadow: 0 0 20px #66c0f4;
     display: flex;
     text-shadow: 0 0 10px white;
+    font-size: 1.2rem;
 }
 
 #match-photo {
@@ -108,7 +110,7 @@
 
 body, html {
     height: 100%;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: monospace;
 }
 .container {
     display: flex;

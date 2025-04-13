@@ -68,6 +68,7 @@ body, html {
 }
 
 #restart-button {
+    display: inline-block;
     background-color: rgb(16, 26, 54);
     font-weight: bold;
     color: white;

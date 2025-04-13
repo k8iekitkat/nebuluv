@@ -58,6 +58,7 @@ body, html {
   border-radius: 30px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-shadow: 0 0 15px white;
 }
 
 .start-button:hover {

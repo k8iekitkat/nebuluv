@@ -61,4 +61,6 @@ Kai Llora – Front-end desgin and CSS styling.
 Alex Cui-Edio - CSS styling.
 
 We welcome contributions and feedback. Feel free to open issues or submit pull requests on our GitHub repository.
+## License
+- This project is licensed under the MIT License. See the LICENSE file for more details.
 

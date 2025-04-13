@@ -1,6 +1,8 @@
 const startButton = document.getElementById('start-button');
 const restartButton = document.getElementById('restart-button');
+const questionContainerElement = document.getElementById('question-container');
 
+let currentQuestionIndex = 1;
 
 const planets = {
     "Mars"     : 0,    // Adventurous
@@ -16,12 +18,26 @@ if(restartButton){
 
 
 function startQuiz() {
-    
+    startButton.classList.add('hide');
+    questionContainerElement.classList.remove('hide');
+    currentQuestionIndex = 1;
+    resetPlanetScores();
+    setNextQuestion();
+
 }
 
 function restartQuiz() {
 
 }
+
+function resetPlanetScores() {
+
+}
+
+function setNextQuestion() {
+    
+}
+
 
 
 

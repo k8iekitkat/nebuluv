@@ -329,24 +329,24 @@ const questions = {
 // photos for each planet
 const planetPhotos = {
     "Mars": [
-      { src: "images/mars_alien_one.webp", description: "Name: Glixeen     Age: 22,814,912    Description: Likes to hunt glerbs and play with fiphors." },
-      { src: "images/mars_alien_two.webp", description: "Name: Xarblip     Age: 1,124,589     Description: Loves to glibblish around crinkly comets and snorfles nacho nebula bits." },
-      { src: "images/mars_alien_three.webp", description: "Name: Zorblink    Age: 3,245,698     Description: Enjoys sprockling through space dust and flomping with giggle-sized glorpberries." }
+      { src: "images/mars_alien_one.webp", description: "Name: Glixeen\n\n     Age: 22,814,912\n\n    Bio: Likes to hunt glerbs and play with fiphors." },
+      { src: "images/mars_alien_two.webp", description: "Name: Xarblip\n\n      Age: 1,124,589\n\n     Bio: Loves to glibblish around crinkly comets and snorfles nacho nebula bits." },
+      { src: "images/mars_alien_three.webp", description: "Name: Zorblink\n\n     Age: 3,245,698\n\n     Bio: Enjoys sprockling through space dust and flomping with giggle-sized glorpberries." }
     ],
     "Venus": [
-      { src: "images/venus_alien_one.webp", description: "Name: Zylara     Age: 2,983,204     Description: Passionate about flimpling cosmic candy and slorping on rainbow asteroid sprinkles."},
-      { src: "images/venus_alien_two.webp", description: "Name: Merinx     Age: 10,378,229    Description: Delights in twinkling through meteor showers and shuffling zany stardust confetti."},
-      { src: "images/venus_alien_three.webp", description: "Name: Aqualis    Age: 289,209,100   Description: Famous for glibbing through interstellar bubble clouds and whirligigging funky plasma spritz."}
+      { src: "images/venus_alien_one.webp", description: "Name: Zylara\n\n     Age: 2,983,204\n\n     Bio: Passionate about flimpling cosmic candy and slorping on rainbow asteroid sprinkles."},
+      { src: "images/venus_alien_two.webp", description: "Name: Merin\n\n     Age: 10,378,229\n\n    Bio: Delights in twinkling through meteor showers and shuffling zany stardust confetti."},
+      { src: "images/venus_alien_three.webp", description: "Name: Aqualis\n\n    Age: 289,209,100\n\n   Bio: Famous for glibbing through interstellar bubble clouds and whirligigging funky plasma spritz."}
     ],
     "Jupiter": [
-      { src: "images/jupiter_alien_one.webp", description: "Name: Voltrax    Age: 908,388,299   Description: Reowned for shnazzling through space caverns and crinkling wildly with cosmic confetti."},
-      { src: "images/jupiter_alien_two.webp", description: "Name: Draxen     Age: 46,290,344    Description: Thrives on splinking rogue meteors and glomping unknown particles with a joyful zing."},
-      { src: "images/jupiter_alien_three.webp", description: "Name: Lexor      Age: 20,332,764    Description: Often seen flurbling across the Milky Way and bamboozling graviton gabbers."}
+      { src: "images/jupiter_alien_one.webp", description: "Name: Voltrax\n\n    Age: 908,388,299\n\n   Bio: Reowned for shnazzling through space caverns and crinkling wildly with cosmic confetti."},
+      { src: "images/jupiter_alien_two.webp", description: "Name: Draxen\n\n     Age: 46,290,344\n\n    Bio: Thrives on splinking rogue meteors and glomping unknown particles with a joyful zing."},
+      { src: "images/jupiter_alien_three.webp", description: "Name: Lexor\n\n      Age: 20,332,764\n\n    Bio: Often seen flurbling across the Milky Way and bamboozling graviton gabbers."}
     ],
     "Uranus": [
-      { src: "images/uranus_alien_one.png", description: "Name: Vynora     Age: 88,294,211    Description: Loves to niffle through surreal starlight and bebop around with snizzle-spritzed comets."},
-      { src: "images/uranus_alien_two.webp", description: "Name: Rilanea    Age: 8,124,288     Description: Has a quirky habit of flabbergasting meteorites and zibbering along quirky cosmic avenues."},
-      { src: "images/uranus_alien_three.webp", description: "Name: Xyrissa    Age: 199,818,228   Description: Expert at quorfing light-year laughs and splitering the mundane with a zany twist in zero-G."}
+      { src: "images/uranus_alien_one.png", description: "Name: Vynora\n\n     Age: 88,294,211\n\n    Bio: Loves to niffle through surreal starlight and bebop around with snizzle-spritzed comets."},
+      { src: "images/uranus_alien_two.webp", description: "Name: Rilanea\n\n    Age: 8,124,288\n\n     Bio: Has a quirky habit of flabbergasting meteorites and zibbering along quirky cosmic avenues."},
+      { src: "images/uranus_alien_three.webp", description: "Name: Xyrissa\n\n    Age: 199,818,228\n\n   Bio: Expert at quorfing light-year laughs and splitering the mundane with a zany twist in zero-G."}
     ]
   };
   

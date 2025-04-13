@@ -31,15 +31,16 @@
 }
 
 #question-container {
+    display: flex;
+    flex-direction: column;
     color: white;
-    width: 50%;
     text-shadow: 0 0 15px white;
     align-items: center;
     margin: auto;
 }
 
 #question-image {
-    display: inline-block;
+    display: flex;
     border-radius: 20px;
     width: 400px;
     height: 300px;
@@ -54,6 +55,16 @@
     margin: auto;
     align-items: center;
     margin-top: 100px;
+}
+
+#photo-description {
+    font-weight: bold;
+    padding: 12px 12px;
+    border-radius: 10px;
+    background-color: #1a3a8f;
+    box-shadow: 0 0 20px #1a3a8f;
+    display: flex;
+    text-shadow: 0 0 10px white;
 }
 
 #match-photo {
@@ -103,7 +114,8 @@ body, html {
   }
 
 #result-container{
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
     background-color: #66c0f4;
     font-weight: bold;
     color: rgb(16, 26, 54);
@@ -112,7 +124,6 @@ body, html {
     border-radius: 30px;
     transition: background-color 0.3s ease;
     box-shadow: 0 0 20px #66c0f4;
-    width: 750px;
 }
 
 #restart-button {

@@ -50,6 +50,16 @@
     box-shadow: 0 0 20px#66c0f4;
 }
 
+#question {
+    background: #1a3a8f;
+    border: 3px solid #3e64ff;
+    padding: 10px 20px;
+    border-radius: 15px;
+    color: #ffffff;
+    font-weight: bold;
+    text-shadow: 0 0 10px #3e64ff;;
+}
+
 #photo-container {
     width: auto;
     margin: auto;
@@ -116,10 +126,11 @@ body, html {
 .logo {
     background-image: url(/images/app_icon.png);
     position: absolute;
-    scale: 8%;
-    top: -460px;
-    left: -460px;
+    scale: 6.5%;
+    top: -475px;
+    left: -475px;
     z-index: 1;
+
 }
 
 #result-container{
@@ -133,6 +144,7 @@ body, html {
     border-radius: 30px;
     transition: background-color 0.3s ease;
     box-shadow: 0 0 20px #66c0f4;
+    width: 75rem;
 }
 
 #restart-button {

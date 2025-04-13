@@ -329,9 +329,9 @@ const planetPhotos = {
         "images/venus_alien_three.webp"
     ],
     "Jupiter" : [
-        "images/venus_alien_one.webp",
-        "images/venus_alien_two.webp",
-        "images/venus_alien_three.webp"
+        "images/jupiter_alien_one.webp",
+        "images/jupiter_alien_two.webp",
+        "images/jupiter_alien_three.webp"
 
     ],
     "Uranus" : [

@@ -29,6 +29,7 @@ if(restartButton){
 
 
 function startQuiz() {
+    console.log('Started');
     startButton.classList.add('hide');
     questionContainerElement.classList.remove('hide');
     currentQuestionIndex = 1;
@@ -91,7 +92,43 @@ function selectAnswer(answerData) {
 }
 
 function showResults() {
-
+    questionContainerElement.classList.add('hide');
+    resultContainerElement.classList.remove('hide');
+    
+    // Find the planet with the highest score
+    let maxScore = 0;
+    let dominantPlanet = "";
+    
+    for (const planet in planets) {
+        if (planets[planet] > maxScore) {
+            maxScore = planets[planet];
+            dominantPlanet = planet;
+        }
+    }
+    
+    // Check for ties
+    const tiedPlanets = [];
+    for (const planet in planets) {
+        if (planets[planet] === maxScore && planet !== dominantPlanet) {
+            tiedPlanets.push(planet);
+        }
+    }
+    
+    // Display results
+    let resultText = "";
+    if (tiedPlanets.length > 0) {
+        // Handle tie
+        tiedPlanets.push(dominantPlanet);
+        resultText = `Your cosmic personality is a blend of ${tiedPlanets.join(' and ')}!\n\n`;
+        tiedPlanets.forEach(planet => {
+            resultText += `${planet}: ${planetDescriptions[planet]}\n\n`;
+        });
+    } else {
+        resultText = `Your cosmic personality aligns with ${dominantPlanet}!\n\n${planetDescriptions[dominantPlanet]}`;
+    }
+    
+    resultTextElement.innerText = resultText;
+    console.log("Final scores:", planets);
 }
 
 

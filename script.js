@@ -317,16 +317,16 @@ const questions = {
 // photos for each planet
 const planetPhotos = {
     "Mars" : [
-        "images/mars_alien_one.webp",
-        "images/mars_alien_two.webp",
-        "images/mars_alien_three.webp"
+        { src: "images/mars_alien_one.webp", description: "Name: Glixeen     Age: 22,814,912    Description: Likes to hunt glerbs and play with fiphors." },
+        { src: "images/mars_alien_two.webp", description: "Name: Xarblip     Age: 1,124,589     Description: Loves to glibblish around crinkly comets and snorfles nacho nebula bits." },
+        { src: "images/mars_alien_three.webp", description: "Name: Zorblink  Age: 3,245,698     Description: Enjoys sprockling through space dust and flomping with giggle-sized glorpberries." }
 
     ],
 
     "Venus" : [
-        "images/venus_alien_one.webp",
-        "images/venus_alien_two.webp",
-        "images/venus_alien_three.webp"
+        { src: "images/venus_alien_one.webp", description: "Name: Zylara    Age: 2,983,204     Description: Passionate about flimpling cosmic candy and slorping on rainbow asteroid sprinkles."},
+        { src: "images/venus_alien_two.webp", description: "Name: Merinx    Age: 10,378,229     Description: Delights in twinkling through meteor showers and shuffling zany stardust confetti."},
+        { stc: "images/venus_alien_three.webp", description: "Name: Aqualis     Age: 289,209,100    Description: Famous for glibbing through interstellar bubble clouds and whirligigging funky plasma spritz."}
     ],
     "Jupiter" : [
         "images/jupiter_alien_one.webp",
@@ -335,7 +335,7 @@ const planetPhotos = {
 
     ],
     "Uranus" : [
-        "images/uranus_alien_one.png",
+        "images/uranus_alien_one.webp",
         "images/uranus_alien_two.webp",
         "images/uranus_alien_three.webp"
     ]

@@ -34,13 +34,15 @@
     color: white;
     width: 50%;
     text-shadow: 0 0 15px white;
+    align-items: center;
+    margin: auto;
 }
 
 #question-image {
     display: inline-block;
     border-radius: 20px;
-    width: 40%;
-    height: 40%;
+    width: 400px;
+    height: 300px;
     margin: 0 auto;
     margin-top: 20px;
     border: solid #1a3a8f;
